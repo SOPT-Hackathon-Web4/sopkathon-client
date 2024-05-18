@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
   //   const [btnActive, setBtnActive] = useState(0);
@@ -11,6 +12,7 @@ const MyPage = () => {
   //   const toggleBtnActive = () => {
   //     setToggleOpen(!toggleOpen);
   //   };
+  const navigate = useNavigate();
 
   return (
     <MyPageWrapper>
@@ -19,6 +21,7 @@ const MyPage = () => {
       <QuizBoxesContainer>
         {QUIZ_DATA?.map((item, idx) => (
           <QuizBox
+            idx={idx}
             quizNum={idx + 1}
             title={item.title}
             labelLeft={item.labelLeft}
@@ -27,7 +30,7 @@ const MyPage = () => {
       </QuizBoxesContainer>
       <Button
         label="퀴즈 없애기"
-        onClick={() => alert('Click!!')}
+        onClick={() => navigate('/')}
         customStyle={css`
           width: 28rem;
           margin-top: 2.4rem;

@@ -45,7 +45,7 @@ const SolveQuiz = () => {
   };
   return (
     <SolveQuizWrapper>
-      <Header>{}님의 취향을 맞춰 보세요.</Header>
+      <Header>김가연님의 취향을 맞춰 보세요.</Header>
       <QuizBoxesContainer>
         {QUIZ_DATA?.map((item, idx) => (
           <QuizBox

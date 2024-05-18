@@ -10,8 +10,8 @@ export interface QuizBoxProps {
   idx: number;
   handleClickLeft?: (idx: number) => void;
   handleClickRight?: (idx: number) => void;
-  active: boolean;
-  isCheck: boolean;
+  active?: boolean;
+  isCheck?: boolean;
   customStyle?: SerializedStyles;
 }
 
