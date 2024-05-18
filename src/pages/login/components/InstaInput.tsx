@@ -22,6 +22,8 @@ const InstaInput = (props: InstaInputProps) => {
 
 export default InstaInput;
 
+/**@todo 태승이가 만들어준 input으로 변경 */
+
 const Title = styled.h1`
   font-size: 2.4rem;
 `;
