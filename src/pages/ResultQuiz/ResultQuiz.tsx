@@ -49,6 +49,7 @@ const DistanceWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 2.5rem;
   margin-bottom: 2.7rem;
 `;
 

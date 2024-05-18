@@ -1,7 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Dev, Home, LoginPage } from '@pages';
-import ResultQuiz from './pages/ResultQuiz/ResultQuiz';
-import RetryQuiz from './pages/RetryQuiz/RetryQuiz';
+import { Dev, Home, LoginPage, ResultQuiz, RetryQuiz } from '@pages';
 
 const router = createBrowserRouter([
   {
