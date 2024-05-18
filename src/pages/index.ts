@@ -4,5 +4,7 @@ import SolveQuiz from './SolveQuiz/SolveQuiz';
 import MyPage from './myPage/MyPage';
 import Dev from './dev/Dev';
 import LoginPage from './login/LoginPage';
+import ResultQuiz from './ResultQuiz/ResultQuiz';
+import RetryQuiz from './RetryQuiz/RetryQuiz';
 
-export { Home, CreateQuiz, SolveQuiz, MyPage, Dev, LoginPage };
+export { Home, CreateQuiz, SolveQuiz, MyPage, Dev, LoginPage, ResultQuiz, RetryQuiz };
