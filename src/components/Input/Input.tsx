@@ -28,15 +28,8 @@ const Input = ({
   ...props
 }: InputProps) => {
   return (
-    <InputContainer className={`input`}>
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        customStyle={customStyle}
-        {...props}
-      />
+    <InputContainer className={`input`} customStyle={customStyle}>
+      <input type={type} placeholder={placeholder} value={value} onChange={onChange} {...props} />
       {isError && <span>{errorMessage}</span>}
     </InputContainer>
   );
