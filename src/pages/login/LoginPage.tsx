@@ -1,4 +1,5 @@
 import { useFunnel } from 'src/hooks/useFunnel';
+import InstaInput from './components/InstaInput';
 
 const LOGIN_FORM_STEP = ['ID', 'PASSWORD'] as const;
 
@@ -8,7 +9,7 @@ const LoginPage = () => {
   return (
     <Funnel>
       <Funnel.Step name="ID">
-        <div onClick={() => setStep(() => 'PASSWORD')}>아이디입력</div>
+        <InstaInput onNext={() => setStep(() => 'PASSWORD')} />
       </Funnel.Step>
       <Funnel.Step name="PASSWORD">
         <div>비밀번호입력</div>
