@@ -1,6 +1,5 @@
 import { Input } from '@components';
 import styled from '@emotion/styled';
-import { QuizBox } from '@components';
 
 const Dev = () => {
   return (
@@ -9,10 +8,7 @@ const Dev = () => {
       <div>
         <Input placeholder="입력하세요" value="" isError={true} errorMessage="비밀번호가 틀렸습니다!" />
       </div>
-      <div>
-        {/* 퀴즈박스 컴포넌트 */}
-        <QuizBox></QuizBox>
-      </div>
+      <div>{/* 퀴즈박스 컴포넌트 */}</div>
     </DevWrapper>
   );
 };

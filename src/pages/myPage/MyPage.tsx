@@ -7,12 +7,19 @@ import { useNavigate } from 'react-router-dom';
 import ZeroKmList from 'src/components/list/ZeroKmList';
 
 const MyPage = () => {
-  //   const [btnActive, setBtnActive] = useState(0);
-  //   const [toggleOpen, setToggleOpen] = useState(false);
+  const isCheck = [true, true, true, true, true, true, true, true];
 
-  //   const toggleBtnActive = () => {
-  //     setToggleOpen(!toggleOpen);
-  //   };
+  const arr = [
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+  ];
+
   const navigate = useNavigate();
 
   return (
@@ -27,7 +34,9 @@ const MyPage = () => {
             quizNum={idx + 1}
             title={item.title}
             labelLeft={item.labelLeft}
-            labelRight={item.labelRight}></QuizBox>
+            labelRight={item.labelRight}
+            isCheck={isCheck[idx]}
+            active={arr[idx].answer}></QuizBox>
         ))}
       </QuizBoxesContainer>
       <Button
