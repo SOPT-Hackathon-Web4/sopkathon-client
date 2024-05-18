@@ -1,6 +1,5 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
-// import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 
 interface InstaInputProps {
@@ -39,10 +38,10 @@ const InstaInput = (props: InstaInputProps) => {
           <Title>입력해주세요!</Title>
         </TitleWrapper>
         <InputWrapper>
-          <Input value={instaValue} onChange={onChange} />
+          <Input value={`@${instaValue}`} onChange={onChange} />
         </InputWrapper>
         <ButtonWrapper>
-          <Button label="다음" onClick={onNext} isActivated={isActivated} />
+          <Button label="다음" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />
         </ButtonWrapper>
       </LoginPageWrapper>
     </>
