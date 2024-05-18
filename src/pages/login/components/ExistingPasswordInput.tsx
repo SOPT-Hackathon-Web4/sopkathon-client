@@ -8,6 +8,7 @@ interface ExistingPasswordInputProps {
 }
 const ExistingPasswordInput = (props: ExistingPasswordInputProps) => {
   const { onNext, existingPassword, onChange } = props;
+  const isActivated = existingPassword.length > 0;
   return (
     <>
       <TitleWrapper>
@@ -17,7 +18,7 @@ const ExistingPasswordInput = (props: ExistingPasswordInputProps) => {
         <Input value={existingPassword} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="회원가입하기" onClick={onNext} />
+        <Button label="회원가입하기" onClick={onNext} isActivated={isActivated} />
       </ButtonWrapper>
     </>
   );
@@ -27,6 +28,7 @@ export default ExistingPasswordInput;
 
 const Title = styled.h1`
   font-size: 2.4rem;
+  ${({ theme }) => theme.font.head1};
 `;
 
 const TitleWrapper = styled.section`

@@ -5,6 +5,7 @@ const theme = {
     primary1: '#FFC4E0',
     primary2: '#C4ACFE',
     sub1: '#2C2556',
+    sub2: '#FBFBF4',
     black: '#000000',
     white: '#FFFFFF',
     gray01: '#F4F4F4',
