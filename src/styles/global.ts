@@ -30,7 +30,7 @@ const GlobalStyle = css`
 
   #root {
     width: 37.5rem;
-    min-height: 200vh;
+    min-height: 100vh;
   }
 
   ::-webkit-scrollbar {
