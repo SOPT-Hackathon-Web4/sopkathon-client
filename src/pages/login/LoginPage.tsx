@@ -41,20 +41,20 @@ const LoginPage = () => {
     }
   };
 
-  const handleDuplicatedInstaId = () => {
-    // try {
-    //       /**@todo 정안 api 바꾸기 */
-    //       const response = await axios.get(`/your-api-endpoint?instaId=${instaValue}`);
-    //       if (response.data === true) {
-    //         onNext();
-    //       } else {
-    //         /**@todo 정안 api 바꾸기 */
-    //         navigate('/some-other-page');
-    //       }
-    //     } catch (error) {
-    //       console.error('Error checking Instagram ID:', error);
-    //     }
-  };
+  // const handleDuplicatedInstaId = () => {
+  // try {
+  //       /**@todo 정안 api 바꾸기 */
+  //       const response = await axios.get(`/your-api-endpoint?instaId=${instaValue}`);
+  //       if (response.data === true) {
+  //         onNext();
+  //       } else {
+  //         /**@todo 정안 api 바꾸기 */
+  //         navigate('/some-other-page');
+  //       }
+  //     } catch (error) {
+  //       console.error('Error checking Instagram ID:', error);
+  //     }
+  // };
 
   return (
     <Funnel>

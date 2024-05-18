@@ -1,7 +1,7 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
 
 interface InstaInputProps {
   onNext: VoidFunction;
@@ -11,7 +11,7 @@ interface InstaInputProps {
 
 const InstaInput = (props: InstaInputProps) => {
   const { onNext, instaValue, onChange } = props;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const checkInstagramId = async () => {
   //   try {
