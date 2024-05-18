@@ -2,62 +2,54 @@ import { css } from '@emotion/react';
 
 const theme = {
   color: {
-    white01: '#FFFFFF',
-    white02: 'rgba(255, 255, 255, 0.56)',
-    gray01: '#F8F8F8',
-    gray02: '#EEEEEE',
-    gray03: '#E6E6E6',
-    gray04: '#D5D5D3',
-    gray05: '#C9C9C9',
-    gray06: '#BEBEBE',
-    gray07: '#A8A8A8',
-    gray08: '#909090',
-    gray09: '#666666',
-    gray10: '#3D3D3D',
-    gray11: '#2D2D2D',
-    gray12: '#101010',
-    mint01: 'var(--mint01, #00C6BE)',
-    blue01: 'var(--blue01, #597ABE)',
+    primary1: '#FFC4E0',
+    primary2: '#C4ACFE',
+    sub1: '#2C2556',
+    black: '#000000',
+    white: '#FFFFFF',
+    gray01: '#F4F4F4',
+    gray02: '#E6E6E6',
+    gray03: '#BEBEBE',
+    gray04: '#A1A1A1',
+    gray05: '#7B7B7B',
+    gray06: '#525252',
+    gray07: '#363636',
   },
   font: {
-    display1: css`
-      font-weight: 600;
-      font-size: 25px;
-      font-family: 'Nanum Myeongjo', serif;
-      font-style: normal;
-      line-height: 125.037%; /* 93.778px */
-      letter-spacing: -2.25px;
-    `,
     head1: css`
-      font-weight: 300;
-      font-size: 35px;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: Pretendard;
+      font-size: 24px;
       font-style: normal;
-      line-height: 136.241%; /* 47.684px */
-      letter-spacing: 1.05px;
+      font-weight: 700;
+      line-height: normal;
     `,
     body1: css`
-      font-weight: 300;
-      font-size: 15px;
-      font-family: 'Noto Sans', sans-serif;
+      font-family: Pretendard;
+      font-size: 20px;
       font-style: normal;
-      line-height: 168%; /* 25.2px */
-      letter-spacing: -0.6px;
+      font-weight: 700;
+      line-height: normal;
     `,
-    detail1: css`
-      font-weight: 500;
-      font-size: 11px;
-      font-family: 'Noto Sans', sans-serif;
+    body2: css`
+      font-family: Pretendard;
+      font-size: 16px;
       font-style: normal;
-      line-height: 136.241%; /* 14.986px */
+      font-weight: 600;
+      line-height: normal;
     `,
-    caption1: css`
+    body3: css`
+      font-family: Pretendard;
+      font-size: 16px;
+      font-style: normal;
       font-weight: 400;
+      line-height: normal;
+    `,
+    sub1: css`
+      font-family: Pretendard;
       font-size: 12px;
-      font-family: Georgia, sans-serif;
-      font-style: italic;
-      line-height: 113.657%; /* 13.639px */
-      letter-spacing: -0.24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
     `,
   },
 };
