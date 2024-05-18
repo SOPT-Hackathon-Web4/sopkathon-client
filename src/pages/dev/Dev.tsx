@@ -1,3 +1,4 @@
+import { IcBrunchLogo } from '@assets/svg';
 import { Button } from '@components';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -6,6 +7,9 @@ const Dev = () => {
   return (
     <DevWrapper>
       Dev
+      <div style={{ width: '20rem' }}>
+        <IcBrunchLogo />
+      </div>
       <div style={{ width: '20rem' }}>
         <Button label="기본버튼" onClick={() => alert('click!!')} />
         <Button
