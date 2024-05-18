@@ -7,11 +7,11 @@ export interface QuizBoxProps {
   title?: string;
   labelLeft?: string;
   labelRight?: string;
-  idx: number;
+  idx?: number;
   handleClickLeft?: (idx: number) => void;
   handleClickRight?: (idx: number) => void;
-  active: boolean;
-  isCheck: boolean;
+  active?: boolean;
+  isCheck?: boolean;
   customStyle?: SerializedStyles;
 }
 
@@ -36,14 +36,14 @@ const QuizBox = ({
           style={isCheck && active ? { backgroundColor: '#FFC4E0' } : {}}
           name="left"
           className={`left`}
-          onClick={() => handleClickLeft(idx)}>
+          onClick={() => handleClickLeft(idx!)}>
           {labelLeft}
         </QuizBtn>
         <QuizBtn
           style={isCheck && !active ? { backgroundColor: '#FFC4E0' } : {}}
           name="right"
           className={`right`}
-          onClick={() => handleClickRight(idx)}>
+          onClick={() => handleClickRight(idx!)}>
           {labelRight}
         </QuizBtn>
       </BtnContainer>
