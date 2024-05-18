@@ -1,4 +1,4 @@
-## sopkathon-client
+## sopkathon-client-sopt
 
 - React + TypeScript
 - @emotion/styled
