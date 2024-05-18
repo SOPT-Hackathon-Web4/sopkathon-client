@@ -46,10 +46,16 @@ const InputContainer = styled.div<InputContainerProps>`
 
 const CommonInput = styled.input`
   width: 100%;
-  height: 3rem;
+  height: 4rem;
+  border-radius: 2rem;
+  border: 0.2rem solid ${({ theme }) => theme.color.gray02};
+  padding-left: 1.2rem;
 `;
 
 const ErrorSpan = styled.span`
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding-left: 1.7rem;
   color: red;
-  font-size: 1.2rem;
+  ${({ theme }) => theme.font.sub1};
 `;
