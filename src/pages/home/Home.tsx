@@ -29,8 +29,7 @@ const HomeWrapper = styled.div`
 const WelcomeH1 = styled.h1`
   margin-top: 2.8rem;
 
-  font-size: 24px;
-  font-weight: 700;
+  ${({ theme }) => theme.font.head1};
 `;
 
 const MainImage = styled.img`
