@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { NonEmptyArray } from '@typings/commonType';
-import { Funnel, FunnelProps, Step } from 'src/components/@common/Funnel/Funnel';
+import { Funnel, FunnelProps, Step } from 'src/components/funnel/Funnel';
 
 export const useFunnel = <Steps extends NonEmptyArray<string>>(steps: Steps, defaultStep: Steps[number]) => {
   const [step, setStep] = useState<Steps[number]>(defaultStep);
