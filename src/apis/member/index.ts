@@ -1,0 +1,1 @@
+export { getMeber } from './getMember';
