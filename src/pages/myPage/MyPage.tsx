@@ -4,11 +4,11 @@ import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
 import ZeroKmList from 'src/components/list/ZeroKmList';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
   const isCheck = [true, true, true, true, true, true, true, true];
 
-  // 서버에서 이 부분을 받아야 함
   const arr = [
     { answer: true },
     { answer: true },
@@ -20,6 +20,8 @@ const MyPage = () => {
     { answer: true },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <MyPageWrapper>
       <Header>마이페이지</Header>
@@ -28,6 +30,7 @@ const MyPage = () => {
       <QuizBoxesContainer>
         {QUIZ_DATA?.map((item, idx) => (
           <QuizBox
+            idx={idx}
             quizNum={idx + 1}
             title={item.title}
             labelLeft={item.labelLeft}
@@ -38,7 +41,7 @@ const MyPage = () => {
       </QuizBoxesContainer>
       <Button
         label="퀴즈 없애기"
-        onClick={() => alert('Click!!')}
+        onClick={() => navigate('/')}
         customStyle={css`
           width: 28rem;
           margin-top: 2.4rem;

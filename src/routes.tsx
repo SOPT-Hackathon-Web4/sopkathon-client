@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Dev, CreateQuiz, SolveQuiz, MyPage, Home, LoginPage, ResultQuiz, RetryQuiz } from '@pages';
+import { Dev, CreateQuiz, SolveQuiz, MyPage, Home, LoginPage, ResultQuiz, RetryQuiz, CheckLogin } from '@pages';
 
 const router = createBrowserRouter([
   {
@@ -7,7 +7,15 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: '/check-login',
+    element: <CheckLogin />,
+  },
+  {
     path: '/login',
+    element: <LoginPage />,
+  },
+  {
+    path: '/login/:next',
     element: <LoginPage />,
   },
   {

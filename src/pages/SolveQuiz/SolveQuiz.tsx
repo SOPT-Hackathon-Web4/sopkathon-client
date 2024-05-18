@@ -3,8 +3,10 @@ import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SolveQuiz = () => {
+  const navigate = useNavigate();
   const [isCheck, setIsCheck] = useState([false, false, false, false, false, false, false, false]);
 
   const [arr, setArr] = useState([
@@ -43,7 +45,7 @@ const SolveQuiz = () => {
   };
   return (
     <SolveQuizWrapper>
-      <Header>{}님의 취향을 맞춰 보세요.</Header>
+      <Header>김가연님의 취향을 맞춰 보세요.</Header>
       <QuizBoxesContainer>
         {QUIZ_DATA?.map((item, idx) => (
           <QuizBox
@@ -60,7 +62,7 @@ const SolveQuiz = () => {
       </QuizBoxesContainer>
       <Button
         label="퀴즈 다 풀었다!"
-        onClick={() => alert('Click!!')}
+        onClick={() => navigate('/result-quiz')}
         customStyle={css`
           width: 28rem;
           margin-top: 2.4rem;

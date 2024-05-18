@@ -36,6 +36,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   ${Generators.flexGenerator()};
   gap: 0.4rem;
   border: none;
+  cursor: pointer;
 
   ${(props) => props.customStyle}
 

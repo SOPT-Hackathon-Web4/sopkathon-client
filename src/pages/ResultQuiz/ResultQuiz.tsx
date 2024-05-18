@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { Generators } from '@styles/generator';
 import { Button } from '@components';
 import { IcResultImg } from '@assets/svg';
+import { useNavigate } from 'react-router-dom';
 
 const ResultQuiz = () => {
+  const navigate = useNavigate();
   return (
     <ResultQuizWrapper>
       <H1>김가연 님과 나의 거리</H1>
@@ -17,10 +19,10 @@ const ResultQuiz = () => {
       <ResultText>두근두근!</ResultText>
       <ResultButtons>
         <ButtonWrapper>
-          <Button label="나도 만들어볼까?" isActivated={false} />
+          <Button label="나도 만들어볼까?" isActivated={false} onClick={() => navigate('/login')} />
         </ButtonWrapper>
         <ButtonWrapper>
-          <Button label="내꺼 확인하러 갈까?" isActivated={false} />
+          <Button label="내꺼 확인하러 갈까?" isActivated={false} onClick={() => navigate('/login/mypage')} />
         </ButtonWrapper>
       </ResultButtons>
     </ResultQuizWrapper>
