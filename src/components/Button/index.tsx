@@ -1,21 +1,32 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { getArticle } from '@apis/article';
+import { Generators } from '@styles/generator';
+import { SerializedStyles } from '@typings/commonType';
 
-const Button = () => {
+export interface ButtonProps {
+  label?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  customStyle?: SerializedStyles;
+}
+
+export interface ButtonContainerProps {
+  customStyle?: SerializedStyles;
+}
+
+const Button = ({ label, onClick = () => {}, customStyle = css``, ...props }: ButtonProps) => {
   return (
-    <CommonButton
-      onClick={async () => {
-        const response = await getArticle(1);
-        console.log(response);
-      }}>
-      Click me
-    </CommonButton>
+    <ButtonContainer className={`button`} customStyle={customStyle} onClick={onClick} {...props}>
+      {label}
+    </ButtonContainer>
   );
 };
 
 export default Button;
 
-const CommonButton = styled.button`
-  width: 10rem;
-  height: 5rem;
+const ButtonContainer = styled.button<ButtonContainerProps>`
+  width: 100%;
+  ${Generators.flexGenerator()};
+  gap: 0.4rem;
+
+  ${(props) => props.customStyle}
 `;
