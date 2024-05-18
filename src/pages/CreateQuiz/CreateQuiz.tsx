@@ -1,17 +1,19 @@
 import styled from '@emotion/styled';
 import { QuizBox } from '@components';
+import { QUIZ_DATA } from 'src/constants/quizData';
 
 const CreateQuiz = () => {
-  const dummyData = [{ title: '내가 좀 더 좋아하는 음식은...', labelLeft: '치킨', labelRight: '피자' }];
-
   return (
     <CreateQuizWrapper>
       <Header>본인의 취향을 선택해 주세요.</Header>
       <QuizBoxesContainer>
-        {dummyData?.map((item, idx) => (
-          <QuizBox quizNum={idx + 1} title={item.title} labelLeft={item.labelLeft} labelRight={item.labelRight}></QuizBox>
+        {QUIZ_DATA?.map((item, idx) => (
+          <QuizBox
+            quizNum={idx + 1}
+            title={item.title}
+            labelLeft={item.labelLeft}
+            labelRight={item.labelRight}></QuizBox>
         ))}
-        <QuizBox></QuizBox>
       </QuizBoxesContainer>
     </CreateQuizWrapper>
   );
