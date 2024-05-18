@@ -2,7 +2,8 @@
 
 <h2> To Zero </h2>
 
-<img src=""  alt="서비스대표-이미지" />
+![1  서비스 로고](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/aea7c2d1-435d-40cc-ad6d-c6597c8d2c4d)
+
 <div>퀴즈를 통해 향하는 너와 나 사이의 거리 0km, To Zero
 
 친해지고 싶지만 계기와 명분이 부족한 이들에게, 성향 퀴즈 문답을 통해 상대방을 알아가며 최종적으로 친해질 기회를 마련해주는 서비스 </div>
@@ -12,11 +13,18 @@
 <h2> ✨ 주요 기능 </h2>
 
 <h3> 1️⃣ 내 퀴즈 만들기 </h3>
-<img src=""  alt="내 퀴즈 만들기-대표이미지" />
+
+![image](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/ff537087-5db4-497c-9d1a-157c2f00dfdb)
+![퀴즈 공유](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/e9671029-f879-4f1b-a27b-63d9ee0a2be6)
+
+
+
 <div ><strong> 내 취향 관련 퀴즈</strong>를 만들어 다른 사용자들이 풀도록 하고, 다 맞춘 <strong>상대방의 정보</strong>를 볼 수 있다.<br/></div>
 
 <h3> 2️⃣ 다른 사람 퀴즈 풀기 </h3>
-<img src=""  alt="다른 사람 퀴즈 풀기-대표이미지" />
+
+![퀴즈 결과 = 2](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/fd9a42bd-c3f4-471a-ab6a-2d6b3255f845)
+
 <div >친해지고 싶은 사람의 <strong>퀴즈를 풀고</strong>, 다 일치하면 상대방에게 <strong>내 이름과 인스타 아이디</strong>를 <strong>전달</strong> 할 수 있다.  <br/></div>
 
 <h2> 👥 Team </h2>
@@ -90,7 +98,6 @@
 <br/>
 
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
-<!-- (노션 링크 또는 표로 작성) -->
 <h3>컨벤션</h3>
 <li> 해커톤의 특성 상 빠른 작업을 위해, css 컨벤션 등은 따로 정하지 않았습니다.</li>
 <br/>
@@ -105,7 +112,6 @@
 
 <br/>
 
-<!-- <a href="" /> -->
 <h3>브랜치 전략</h3>
 
 <li>브랜치 또한 해커톤의 특성에 맞춰 빠른 개발을 위해 기능별로 브랜치를 작업하지 않고 한 사람 당 한 개의 브랜치를 가지고 작업하기로 결정하였습니다.</li>
@@ -133,37 +139,87 @@
 <h2> 📁 폴더 구조 </h2>
 
 ```
-┣ 📦public
+📦public
  ┣ 📂svg
  ┃ ┣ 📜ic_artist1.svg
+ ┃ ┣ 📜ic_background.svg
  ┃ ┣ 📜ic_brunch-logo.svg
+ ┃ ┣ 📜ic_logo.svg
+ ┃ ┣ 📜ic_main-icon.svg
+ ┃ ┣ 📜ic_result-img.svg
+ ┃ ┣ 📜ic_retry-img.svg
  ┃ ┗ 📜ic_subscribe.svg
  ┗ 📜vite.svg
-┣ 📦src
+📦src
  ┣ 📂apis
  ┃ ┣ 📂article
  ┃ ┃ ┣ 📜getArticle.ts
  ┃ ┃ ┣ 📜index.ts
  ┃ ┃ ┗ 📜postArticle.ts
+ ┃ ┣ 📂member
+ ┃ ┃ ┣ 📜deleteMember.ts
+ ┃ ┃ ┣ 📜getMember.ts
+ ┃ ┃ ┣ 📜getMemberDetail.ts
+ ┃ ┃ ┣ 📜getPasswordCheck.ts
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📂quiz
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┣ 📜postCheckQuiz.ts
+ ┃ ┃ ┗ 📜postQuiz.ts
  ┃ ┗ 📜index.ts
  ┣ 📂assets
  ┃ ┣ 📂svg
  ┃ ┃ ┣ 📜IcArtist1.tsx
+ ┃ ┃ ┣ 📜IcBackground.tsx
  ┃ ┃ ┣ 📜IcBrunchLogo.tsx
+ ┃ ┃ ┣ 📜IcMainIcon.tsx
+ ┃ ┃ ┣ 📜IcResultImg.tsx
+ ┃ ┃ ┣ 📜IcRetryImg.tsx
  ┃ ┃ ┣ 📜IcSubscribe.tsx
  ┃ ┃ ┗ 📜index.ts
  ┃ ┣ 📜custom.d.ts
  ┃ ┗ 📜react.svg
  ┣ 📂components
  ┃ ┣ 📂Button
- ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┗ 📜test.tsx
+ ┃ ┃ ┗ 📜Button.tsx
+ ┃ ┣ 📂funnel
+ ┃ ┃ ┗ 📜Funnel.tsx
+ ┃ ┣ 📂Input
+ ┃ ┃ ┗ 📜Input.tsx
+ ┃ ┣ 📂QuizBox
+ ┃ ┃ ┗ 📜QuizBox.tsx
  ┃ ┗ 📜index.ts
+ ┣ 📂constants
+ ┃ ┗ 📜quizData.tsx
+ ┣ 📂hooks
+ ┃ ┗ 📜useFunnel.tsx
  ┣ 📂pages
+ ┃ ┣ 📂CreateQuiz
+ ┃ ┃ ┗ 📜CreateQuiz.tsx
  ┃ ┣ 📂dev
  ┃ ┃ ┗ 📜Dev.tsx
  ┃ ┣ 📂home
+ ┃ ┃ ┣ 📂CheckLogin
+ ┃ ┃ ┃ ┗ 📜CheckLogin.tsx
+ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┃ ┗ 📂StartButton
+ ┃ ┃ ┃ ┃ ┗ 📜StartButton.tsx
  ┃ ┃ ┗ 📜Home.tsx
+ ┃ ┣ 📂login
+ ┃ ┃ ┣ 📂components
+ ┃ ┃ ┃ ┣ 📜ExistingPasswordInput.tsx
+ ┃ ┃ ┃ ┣ 📜InstaInput.tsx
+ ┃ ┃ ┃ ┣ 📜NameInput.tsx
+ ┃ ┃ ┃ ┗ 📜PasswordInput.tsx
+ ┃ ┃ ┗ 📜LoginPage.tsx
+ ┃ ┣ 📂myPage
+ ┃ ┃ ┗ 📜MyPage.tsx
+ ┃ ┣ 📂ResultQuiz
+ ┃ ┃ ┗ 📜ResultQuiz.tsx
+ ┃ ┣ 📂RetryQuiz
+ ┃ ┃ ┗ 📜RetryQuiz.tsx
+ ┃ ┣ 📂SolveQuiz
+ ┃ ┃ ┗ 📜SolveQuiz.tsx
  ┃ ┗ 📜index.ts
  ┣ 📂styles
  ┃ ┣ 📜emotion.d.ts
@@ -174,6 +230,7 @@
  ┣ 📂typings
  ┃ ┗ 📜commonType.ts
  ┣ 📂utils
+ ┃ ┣ 📜error.ts
  ┃ ┗ 📜util.ts
  ┣ 📜App.tsx
  ┣ 📜main.tsx
@@ -192,8 +249,8 @@
 <h3>Before</h3>
 
 ![KakaoTalk_20240518_223247808](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/409ce92f-ca27-4dbe-a682-148cd0391068)
-
-웨비 팀원들 사진 (before)
  
 <h3>After</h3>
-<img src="" alt="웨비 팀원들 사진 (after)"/>
+
+![KakaoTalk_20240519_074659597](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/ebad1996-6add-4f45-9914-af1826d59c62)
+
