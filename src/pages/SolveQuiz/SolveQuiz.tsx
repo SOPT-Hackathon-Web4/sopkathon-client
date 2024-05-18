@@ -40,6 +40,7 @@ const SolveQuizWrapper = styled.div`
 
 const Header = styled.header`
   display: inline-flex;
+  position: fixed;
   align-items: center;
 
   margin-bottom: 1.6rem;
@@ -48,7 +49,11 @@ const Header = styled.header`
 
   border: 0.1rem solid black;
 
+  background: #fff;
+
   font-size: 2rem;
+
+  z-index: 1;
 `;
 
 const QuizBoxesContainer = styled.section`
