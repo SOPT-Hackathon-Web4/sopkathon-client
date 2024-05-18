@@ -30,6 +30,7 @@ const GlobalStyle = css`
   #root {
     width: 37.5rem;
     min-height: 100vh;
+    padding: 0 1.6rem;
   }
 `;
 
