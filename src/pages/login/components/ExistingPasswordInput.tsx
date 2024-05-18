@@ -1,23 +1,21 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
 
-interface NameInputProps {
+interface ExistingPasswordInputProps {
   onNext: VoidFunction;
-  name: string;
+  existingPassword: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
-const NameInput = (props: NameInputProps) => {
-  const { onNext, name, onChange } = props;
-
-  const isActivated = name.length > 0;
+const ExistingPasswordInput = (props: ExistingPasswordInputProps) => {
+  const { onNext, existingPassword, onChange } = props;
+  const isActivated = existingPassword.length > 0;
   return (
     <>
       <TitleWrapper>
-        <Title>이름을 입력해주세요.</Title>
+        <Title>비밀번호 입력해주세요.</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={name} onChange={onChange} />
+        <Input type="password" value={existingPassword} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="회원가입하기" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />
@@ -26,17 +24,7 @@ const NameInput = (props: NameInputProps) => {
   );
 };
 
-export default NameInput;
-
-const InputWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 6.7rem;
-  margin-left: 1.6rem;
-  width: 28rem;
-`;
+export default ExistingPasswordInput;
 
 const Title = styled.h1`
   font-size: 2.4rem;
@@ -49,6 +37,16 @@ const TitleWrapper = styled.section`
   margin-left: 2.6rem;
   margin-top: 2.4rem;
   gap: 0.4rem;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 6.7rem;
+  margin-left: 1.6rem;
+  width: 28rem;
 `;
 
 const ButtonWrapper = styled.div`

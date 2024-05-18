@@ -9,6 +9,7 @@ interface PasswordInputProps {
 
 const PasswordInput = (props: PasswordInputProps) => {
   const { onNext, password, onChange } = props;
+  const isActivated = password.length > 0;
 
   return (
     <>
@@ -16,10 +17,10 @@ const PasswordInput = (props: PasswordInputProps) => {
         <Title>비밀번호 입력해주세요.</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={password} onChange={onChange} />
+        <Input type="password" value={password} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="다음" onClick={onNext} />
+        <Button label="다음" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />
       </ButtonWrapper>
     </>
   );
@@ -29,6 +30,7 @@ export default PasswordInput;
 
 const Title = styled.h1`
   font-size: 2.4rem;
+  ${({ theme }) => theme.font.head1};
 `;
 
 const TitleWrapper = styled.section`
