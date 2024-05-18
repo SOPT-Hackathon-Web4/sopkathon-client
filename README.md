@@ -1,9 +1,11 @@
 <div align="center">
 
-<h2> 서비스 제목 </h2>
+<h2> To Zero </h2>
 
 <img src=""  alt="서비스대표-이미지" />
-<div>(서비스 소개)</div>
+<div>퀴즈를 통해 향하는 너와 나 사이의 거리 0km, To Zero
+
+친해지고 싶지만 계기와 명분이 부족한 이들에게, 성향 퀴즈 문답을 통해 상대방을 알아가며 최종적으로 친해질 기회를 마련해주는 서비스 </div>
 
 </div>
 
@@ -56,13 +58,16 @@
     </tr>
   	<tr align="center">
        <td>
-            (역할분담) <br/>
+            메인 페이지 <br/>
+            마이페이지 <br/>
+            결과 확인 페이지 <br/>
       </td>
        <td>
-            (역할분담) <br/>
+            로그인/회원가입 <br/>
       </td>
        <td>
-            (역할분담) <br/>
+            퀴즈 생성 페이지 <br/>
+            퀴즈 푸는 페이지 <br/>
       </td>
     </tr>
 </table>
@@ -87,8 +92,18 @@
 <h2>  📄 컨벤션 및 브랜치 전략 </h2>
 <!-- (노션 링크 또는 표로 작성) -->
 <h3>컨벤션</h3>
-<li> 해커톤의 특성 상 빠른 작업을 위해, commit 컨벤션, css 컨벤션 등은 따로 정하지 않았습니다.</li>
-<li>해커톤 시작 전 웹 리드의 초기 세팅을 기본으로 두고 따르기로 결정하였습니다. (이 부분 괜찮은지 확인 좀 해 주세요... to.태승 오빠 정안 오빠)</li>
+<li> 해커톤의 특성 상 빠른 작업을 위해, css 컨벤션 등은 따로 정하지 않았습니다.</li>
+<br/>
+
+| 커밋 컨벤션 | 용도                     |
+| ----------- | ------------------------ |
+| feat        | 새 기능 추가             |
+| fix         | 오류 수정                |
+| chore       | 간단한 수정 및 파일 추가 |
+| refactor    | 리팩토링                 |
+| style       | 코드 스타일 수정         |
+
+<br/>
 
 <!-- <a href="" /> -->
 <h3>브랜치 전략</h3>
@@ -121,6 +136,7 @@
 ┣ 📦public
  ┣ 📂svg
  ┃ ┣ 📜ic_artist1.svg
+ ┃ ┣ 📜ic_brunch-logo.svg
  ┃ ┗ 📜ic_subscribe.svg
  ┗ 📜vite.svg
 ┣ 📦src
@@ -133,6 +149,7 @@
  ┣ 📂assets
  ┃ ┣ 📂svg
  ┃ ┃ ┣ 📜IcArtist1.tsx
+ ┃ ┃ ┣ 📜IcBrunchLogo.tsx
  ┃ ┃ ┣ 📜IcSubscribe.tsx
  ┃ ┃ ┗ 📜index.ts
  ┃ ┣ 📜custom.d.ts
@@ -143,11 +160,14 @@
  ┃ ┃ ┗ 📜test.tsx
  ┃ ┗ 📜index.ts
  ┣ 📂pages
+ ┃ ┣ 📂dev
+ ┃ ┃ ┗ 📜Dev.tsx
  ┃ ┣ 📂home
  ┃ ┃ ┗ 📜Home.tsx
  ┃ ┗ 📜index.ts
  ┣ 📂styles
  ┃ ┣ 📜emotion.d.ts
+ ┃ ┣ 📜generator.ts
  ┃ ┣ 📜global.ts
  ┃ ┣ 📜reset.ts
  ┃ ┗ 📜theme.ts
@@ -159,8 +179,6 @@
  ┣ 📜main.tsx
  ┣ 📜routes.tsx
  ┗ 📜vite-env.d.ts
-
- 제출 전에 한 번 더 수정하겠습니다~~    -신지-
 ```
 
 <h3>우리조 그라운드 룰</h3>
@@ -172,8 +190,7 @@
 
 <h2> 새싹 웨비 Before and After</h2>
 <h3>Before</h3>
-<img src="![KakaoTalk_20240518_223247808](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/dc72e08e-6a8a-4eb8-969c-f3bf7456e5b8)
-" alt="웨비 팀원들 사진 (before)"/>
+<img src="" alt="웨비 팀원들 사진 (before)"/>
  
 <h3>After</h3>
 <img src="" alt="웨비 팀원들 사진 (after)"/>
