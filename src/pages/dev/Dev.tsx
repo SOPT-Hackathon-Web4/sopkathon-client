@@ -22,7 +22,4 @@ export default Dev;
 const DevWrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.color.gray02};
-
-  padding: 0 1.6rem;
-  gap: 2rem;
 `;
