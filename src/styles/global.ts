@@ -25,11 +25,16 @@ const GlobalStyle = css`
   }
   html {
     font-size: 62.5%;
+    scrollbar-width: none;
   }
 
   #root {
     width: 37.5rem;
-    min-height: 100vh;
+    min-height: 200vh;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;
 
