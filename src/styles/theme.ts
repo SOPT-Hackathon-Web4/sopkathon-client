@@ -17,6 +17,13 @@ const theme = {
     gray07: '#363636',
   },
   font: {
+    title: css`
+      font-family: Pretendard;
+      font-size: 96px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    `,
     head1: css`
       font-family: Pretendard;
       font-size: 24px;
