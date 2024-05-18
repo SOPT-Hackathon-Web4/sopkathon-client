@@ -1,3 +1,4 @@
+import { getArticle } from '@apis/article';
 import { IcBrunchLogo } from '@assets/svg';
 import { Button } from '@components';
 import { css } from '@emotion/react';
@@ -14,7 +15,10 @@ const Dev = () => {
         <Button label="기본버튼" onClick={() => alert('click!!')} />
         <Button
           label="커스텀 스타일 추가 가능"
-          onClick={() => alert('Click!!')}
+          onClick={async () => {
+            const response = await getArticle(1);
+            console.log(response);
+          }}
           customStyle={css`
             background-color: red;
           `}
