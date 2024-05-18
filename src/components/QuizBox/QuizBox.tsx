@@ -32,7 +32,6 @@ const QuizBox = ({ idx, title, labelLeft, labelRight, onClick = () => {} }: Quiz
 export default QuizBox;
 
 const QuizBoxContainer = styled.section`
-  /* width를 100으로 줬기 때문에, 페이지에서 사용할 때 padding: 0 1.6rem; 주기 */
   /* 페이지 단에서 gap 주는 거 잊지 말기!  */
   width: 100%;
   height: 16rem;
