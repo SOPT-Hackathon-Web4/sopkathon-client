@@ -26,7 +26,7 @@ const MyPage = () => {
         ))}
       </QuizBoxesContainer>
       <Button
-        label="퀴즈 삭제하기"
+        label="퀴즈 없애기"
         onClick={() => alert('Click!!')}
         customStyle={css`
           width: 28rem;
@@ -34,7 +34,7 @@ const MyPage = () => {
           padding: 1.4rem 9.4rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
         `}
-        isActivated={true}></Button>
+        isActivated={false}></Button>
     </MyPageWrapper>
   );
 };
@@ -48,22 +48,21 @@ const MyPageWrapper = styled.div`
 `;
 
 const Header = styled.header`
-  display: inline-flex;
+  display: flex;
   position: fixed;
   align-items: center;
 
   margin-bottom: 1.6rem;
   padding: 1.2rem 1.6rem 1.2rem;
-  width: 100%;
+  width: 37.5rem;
   top: 0;
-
-  border: 0.1rem solid black;
 
   background: #fff;
 
   font-family: ${({ theme }) => theme.font.body1};
 
   z-index: 1;
+  box-shadow: 0 0.4rem 2.5rem 0 rgba(0, 0, 0, 0.05);
 `;
 
 const DropDownContainer = styled.button`
@@ -72,6 +71,9 @@ const DropDownContainer = styled.button`
 
   padding: 1.4rem 9.4rem;
   margin: 7rem 4.8rem 1.6rem 4.8rem;
+
+  border: 0.2rem solid;
+  border-radius: 1rem;
 `;
 
 const QuizBoxesContainer = styled.section`

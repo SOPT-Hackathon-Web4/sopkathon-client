@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
 import { Generators } from '@styles/generator';
 import { SerializedStyles } from '@typings/commonType';
 
@@ -8,21 +7,43 @@ export interface QuizBoxProps {
   title?: string;
   labelLeft?: string;
   labelRight?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  idx: number;
+  handleClickLeft?: (idx: number) => void;
+  handleClickRight?: (idx: number) => void;
+  active: boolean;
+  isCheck: boolean;
   customStyle?: SerializedStyles;
 }
 
-const QuizBox = ({ quizNum, title, labelLeft, labelRight, onClick = () => {} }: QuizBoxProps) => {
+const QuizBox = ({
+  quizNum,
+  title,
+  labelLeft,
+  labelRight,
+  idx,
+  handleClickLeft = () => {},
+  handleClickRight = () => {},
+  isCheck,
+  active,
+}: QuizBoxProps) => {
   return (
     <QuizBoxContainer>
       <TextContainer>
         Q{quizNum}. {title}
       </TextContainer>
       <BtnContainer>
-        <QuizBtn className={`button`} onClick={() => alert('Left Click!!')}>
+        <QuizBtn
+          style={isCheck && active ? { backgroundColor: '#FFC4E0' } : {}}
+          name="left"
+          className={`left`}
+          onClick={() => handleClickLeft(idx)}>
           {labelLeft}
         </QuizBtn>
-        <QuizBtn className={`button`} onClick={onClick}>
+        <QuizBtn
+          style={isCheck && !active ? { backgroundColor: '#FFC4E0' } : {}}
+          name="right"
+          className={`right`}
+          onClick={() => handleClickRight(idx)}>
           {labelRight}
         </QuizBtn>
       </BtnContainer>

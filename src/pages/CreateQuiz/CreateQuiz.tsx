@@ -2,8 +2,46 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
+import { useState } from 'react';
 
 const CreateQuiz = () => {
+  const [isCheck, setIsCheck] = useState([false, false, false, false, false, false, false, false]);
+
+  const [arr, setArr] = useState([
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+  ]);
+
+  const handleClickLeft = (idx: number) => {
+    const newArr = [...arr];
+
+    newArr[idx] = { ...newArr[idx], answer: true };
+
+    setArr(newArr);
+
+    const newIsCheck = [...isCheck];
+    newIsCheck[idx] = true;
+    setIsCheck(newIsCheck);
+  };
+
+  const handleClickRight = (idx: number) => {
+    const newArr = [...arr];
+
+    newArr[idx] = { ...newArr[idx], answer: false };
+
+    setArr(newArr);
+
+    const newIsCheck = [...isCheck];
+    newIsCheck[idx] = true;
+    setIsCheck(newIsCheck);
+  };
+
   return (
     <CreateQuizWrapper>
       <Header>본인의 취향을 선택해 주세요.</Header>
@@ -13,7 +51,12 @@ const CreateQuiz = () => {
             quizNum={idx + 1}
             title={item.title}
             labelLeft={item.labelLeft}
-            labelRight={item.labelRight}></QuizBox>
+            labelRight={item.labelRight}
+            idx={idx}
+            handleClickLeft={handleClickLeft}
+            handleClickRight={handleClickRight}
+            isCheck={isCheck[idx]}
+            active={arr[idx].answer}></QuizBox>
         ))}
       </QuizBoxesContainer>
       <Button
