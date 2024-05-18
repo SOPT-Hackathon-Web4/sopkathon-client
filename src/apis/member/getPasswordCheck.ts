@@ -1,10 +1,11 @@
 import instance from '../index';
 
-export const getMember = async (id: string) => {
+export const getPasswordCheck = async (id: string, password: string) => {
   try {
-    const response = await instance.get(`/member`, {
+    const response = await instance.get(`/member/password-check`, {
       headers: {
         instaId: id,
+        pass: password,
       },
     });
     return response.data;

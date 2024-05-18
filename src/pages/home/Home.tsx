@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import StartButton from './components/StartButton/StartButton';
 import { Generators } from '@styles/generator';
-import { getMeber } from '@apis/member';
+import { getMember } from '@apis/member';
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <WelcomeH1>투제로에 온 것을 환영해요!</WelcomeH1>
       <MainImage src="https://via.placeholder.com/200" alt="메인 페이지 소개" />
       <MainButtons>
-        <StartButton descriptionLabel="처음 왔나요?" buttonLabel="투제로 시작하기" onClick={() => getMeber(1)} />
+        <StartButton descriptionLabel="처음 왔나요?" buttonLabel="투제로 시작하기" onClick={() => getMember('1')} />
         <StartButton descriptionLabel="이미 계정이 있나요?" buttonLabel="투제로 계속하기" />
       </MainButtons>
     </HomeWrapper>
