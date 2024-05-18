@@ -6,5 +6,6 @@ import Dev from './dev/Dev';
 import LoginPage from './login/LoginPage';
 import ResultQuiz from './ResultQuiz/ResultQuiz';
 import RetryQuiz from './RetryQuiz/RetryQuiz';
+import CheckLogin from './home/CheckLogin/CheckLogin';
 
-export { Home, CreateQuiz, SolveQuiz, MyPage, Dev, LoginPage, ResultQuiz, RetryQuiz };
+export { Home, CreateQuiz, SolveQuiz, MyPage, Dev, LoginPage, ResultQuiz, RetryQuiz, CheckLogin };
