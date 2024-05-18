@@ -13,6 +13,7 @@ const InstaInput = (props: InstaInputProps) => {
         <Title>인스타그램 아이디를</Title>
         <Title>입력해주세요!</Title>
       </TitleWrapper>
+      <Input />
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} />
       </ButtonWrapper>
@@ -23,6 +24,11 @@ const InstaInput = (props: InstaInputProps) => {
 export default InstaInput;
 
 /**@todo 태승이가 만들어준 input으로 변경 */
+
+const Input = styled.input`
+  width: 34.3rem;
+  margin-top: 4.1rem;
+`;
 
 const Title = styled.h1`
   font-size: 2.4rem;
@@ -38,9 +44,10 @@ const TitleWrapper = styled.section`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  background-color: pink;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  background-color: pink;
   padding: 1.4rem 0 1.5rem 0;
   width: 28rem;
   margin-top: 3.2rem;
