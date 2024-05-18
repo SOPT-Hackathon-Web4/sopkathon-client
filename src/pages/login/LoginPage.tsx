@@ -3,9 +3,11 @@ import InstaInput from './components/InstaInput';
 import PasswordInput from './components/PasswordInput';
 import NameInput from './components/NameInput';
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import ExistingPasswordInput from './components/ExistingPasswordInput';
 import styled from '@emotion/styled';
+import { getMember, getPasswordCheck } from '@apis/member';
+import { useNavigate } from 'react-router-dom';
 
 const LOGIN_FORM_STEP = ['ID', 'PASSWORD', 'EXISTING_PASSWORD', 'NAME'] as const;
 
@@ -18,8 +20,12 @@ const LoginPage = () => {
 
   const [name, setName] = useState('');
 
+  const navigate = useNavigate();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInstaValue(e.target.value);
+    const value = e.target.value;
+    const instaId = value.includes('@') ? value.split('@')[1] : '';
+    setInstaValue(instaId);
+    console.log({ instaValue: instaId });
   };
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -33,35 +39,60 @@ const LoginPage = () => {
   };
 
   const handleSubmit = async () => {
-    try {
-      /**@todo 정안 api 바꾸기 */
-      const response = await axios.post('/your-api-endpoint', {
-        instaId: instaValue,
-        password,
-        name,
-      });
-      console.log('회원가입 성공:', response.data);
-      // Handle successful registration, e.g., navigate to a different page
-    } catch (error) {
-      console.error('회원가입 실패:', error);
-      // Handle registration failure
-    }
+    navigate('/create-quiz');
+    // try {
+    //   /**@todo 정안 api 바꾸기 */
+    //   const response = await axios.post('/your-api-endpoint', {
+    //     instaId: instaValue,
+    //     password,
+    //     name,
+    //   });
+    //   console.log('회원가입 성공:', response.data);
+    //   // Handle successful registration, e.g., navigate to a different page
+    // } catch (error) {
+    //   console.error('회원가입 실패:', error);
+    //   // Handle registration failure
+    // }
   };
 
-  const handleDuplicatedInstaId = async () => {
+  const handleDuplicatedInstaId = (id: string) => {
     try {
-      /**@todo 정안 api 바꾸기 */
+      getMember(id);
       setStep(() => 'PASSWORD');
-
-      // const response = await axios.get(`/your-api-endpoint?instaId=${instaValue}`);
-      // if (response.data === true) {
-      //   setStep(() => 'PASSWORD');
-      // } else {
-      //   /**@todo 정안 api 바꾸기 */
-      // }
     } catch (error) {
-      setStep(() => 'EXISTING_PASSWORD');
       console.error('Error checking Instagram ID:', error);
+      setStep(() => 'EXISTING_PASSWORD');
+    }
+  };
+  // const handleDuplicatedInstaId = async () => {
+  //   try {
+  //     /**@todo 정안 api 바꾸기 */
+  //     setStep(() => 'PASSWORD');
+
+  //     const response = await axios.get('/member', {
+  //       headers: {
+  //         instaId: `@${instaValue}`,
+  //       },
+  //     });
+  //     if (response.data.success === true) {
+  //       setStep(() => 'PASSWORD');
+  //     } else {
+  //       /**@todo 정안 api 바꾸기 */
+  //       setStep(() => 'EXISTING_PASSWORD');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error checking Instagram ID:', error);
+  //   }
+  // };
+
+  const handleDuplicate = (id: string, password: string) => {
+    try {
+      getPasswordCheck(id, password);
+      // navigate('/create-quiz');
+
+      // navigate('/mypage')
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -71,7 +102,7 @@ const LoginPage = () => {
         <Funnel.Step name="ID">
           <InstaInput
             onNext={() => {
-              handleDuplicatedInstaId();
+              handleDuplicatedInstaId(instaValue);
               // setStep(() => 'PASSWORD');
             }}
             instaValue={instaValue}
@@ -83,7 +114,8 @@ const LoginPage = () => {
         </Funnel.Step>
         <Funnel.Step name="EXISTING_PASSWORD">
           <ExistingPasswordInput
-            onNext={() => setStep(() => 'NAME')}
+            // onNext={() => setStep(() => 'NAME')}
+            onNext={() => handleDuplicate(instaValue, password)}
             existingPassword={existingPassword}
             onChange={handleExistingPasswordChange}
           />
@@ -100,5 +132,5 @@ export default LoginPage;
 
 const LoginPageWrapper = styled.section`
   background-color: ${({ theme }) => theme.color.sub2};
-  /* background-color: #fbfbf4; */
+  height: 100vh;
 `;
