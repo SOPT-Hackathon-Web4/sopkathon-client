@@ -1,12 +1,8 @@
 import instance from '../index';
 
-export const getMember = async (id: string) => {
+export const getMemberDetail = async (id: string) => {
   try {
-    const response = await instance.get(`/member`, {
-      headers: {
-        instaId: id,
-      },
-    });
+    const response = await instance.get(`/member/${id}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching member data:', error);
