@@ -1,21 +1,22 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
-import { useState } from 'react';
 
 interface PasswordInputProps {
   onNext: VoidFunction;
+  password: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const PasswordInput = (props: PasswordInputProps) => {
-  const { onNext } = props;
-  const [password, setPassword] = useState('');
+  const { onNext, password, onChange } = props;
+
   return (
     <>
       <TitleWrapper>
         <Title>비밀번호 입력해주세요.</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={password} />
+        <Input value={password} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} />

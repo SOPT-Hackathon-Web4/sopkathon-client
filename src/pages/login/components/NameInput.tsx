@@ -1,21 +1,22 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
-import { useState } from 'react';
 
 interface NameInputProps {
   onNext: VoidFunction;
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const NameInput = (props: NameInputProps) => {
-  const { onNext } = props;
-  const [name, setName] = useState('');
+  const { onNext, name, onChange } = props;
+
   return (
     <>
       <TitleWrapper>
         <Title>이름을 입력해주세요.</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={name} />
+        <Input value={name} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="회원가입하기" onClick={onNext} />

@@ -1,14 +1,33 @@
 import { Button, Input } from '@components';
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface InstaInputProps {
   onNext: VoidFunction;
+  instaValue: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InstaInput = (props: InstaInputProps) => {
-  const { onNext } = props;
-  const [instaValue, setInstaValue] = useState('');
+  const { onNext, instaValue, onChange } = props;
+  const navigate = useNavigate();
+
+  // const checkInstagramId = async () => {
+  //   try {
+  //     /**@todo 정안 api 바꾸기 */
+
+  //     const response = await axios.get(`/your-api-endpoint?instaId=${instaValue}`);
+  //     if (response.data === true) {
+  //       onNext();
+  //     } else {
+  //       /**@todo 정안 api 바꾸기 */
+  //       navigate('/some-other-page');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error checking Instagram ID:', error);
+  //   }
+  // };
 
   return (
     <>
@@ -17,7 +36,7 @@ const InstaInput = (props: InstaInputProps) => {
         <Title>입력해주세요!</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={instaValue} />
+        <Input value={instaValue} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} />
@@ -27,8 +46,6 @@ const InstaInput = (props: InstaInputProps) => {
 };
 
 export default InstaInput;
-
-/**@todo 태승이가 만들어준 input으로 변경 */
 
 const InputWrapper = styled.div`
   display: flex;
