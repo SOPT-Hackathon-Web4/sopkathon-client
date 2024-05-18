@@ -24,7 +24,8 @@ const CreateQuiz = () => {
           margin-top: 2.4rem;
           padding: 1.4rem 9.4rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
-        `}></Button>
+        `}
+        isActivated={true}></Button>
     </CreateQuizWrapper>
   );
 };
@@ -33,7 +34,6 @@ export default CreateQuiz;
 
 const CreateQuizWrapper = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.color.gray02};
 
   align-items: center;
 `;
@@ -50,10 +50,10 @@ const Header = styled.header`
 
   background: #fff;
 
-  font-size: 2rem;
+  font-family: ${({ theme }) => theme.font.body1};
 
   z-index: 1;
-  box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.4rem 2.5rem 0 rgba(0, 0, 0, 0.05);
 `;
 
 const QuizBoxesContainer = styled.section`

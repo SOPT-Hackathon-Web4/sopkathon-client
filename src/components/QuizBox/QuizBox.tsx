@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
 import { Generators } from '@styles/generator';
 import { SerializedStyles } from '@typings/commonType';
 
@@ -18,7 +19,7 @@ const QuizBox = ({ quizNum, title, labelLeft, labelRight, onClick = () => {} }: 
         Q{quizNum}. {title}
       </TextContainer>
       <BtnContainer>
-        <QuizBtn className={`button`} onClick={onClick}>
+        <QuizBtn className={`button`} onClick={() => alert('Left Click!!')}>
           {labelLeft}
         </QuizBtn>
         <QuizBtn className={`button`} onClick={onClick}>
@@ -36,8 +37,9 @@ const QuizBoxContainer = styled.section`
   width: 100%;
   height: 16rem;
 
-  border: 0.1rem solid;
+  border: 0.2rem solid;
   border-radius: 1rem;
+  border-color: ${({ theme }) => theme.color.gray02};
 `;
 
 const TextContainer = styled.section`
@@ -45,7 +47,7 @@ const TextContainer = styled.section`
 
   margin: 2rem;
 
-  font-size: 1.6rem;
+  font-family: ${({ theme }) => theme.font.body2};
 `;
 
 const BtnContainer = styled.section`
@@ -53,6 +55,8 @@ const BtnContainer = styled.section`
 
   margin: 1.95rem;
   gap: 2.4rem;
+
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 const QuizBtn = styled.button`
@@ -62,8 +66,12 @@ const QuizBtn = styled.button`
 
   padding: 2.5rem 0;
 
-  border: 0.1rem solid;
-  border-radius: 1rem;
+  border: 0.2rem solid;
+  border-radius: 2rem;
+  border-color: ${({ theme }) => theme.color.primary1};
 
-  font-size: 2rem;
+  background-color: white;
+
+  font-family: ${({ theme }) => theme.font.body1};
+  color: ${({ theme }) => theme.color.gray06};
 `;

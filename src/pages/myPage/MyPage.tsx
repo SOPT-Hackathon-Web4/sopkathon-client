@@ -33,7 +33,8 @@ const MyPage = () => {
           margin-top: 2.4rem;
           padding: 1.4rem 9.4rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
-        `}></Button>
+        `}
+        isActivated={true}></Button>
     </MyPageWrapper>
   );
 };
@@ -42,7 +43,6 @@ export default MyPage;
 
 const MyPageWrapper = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.color.gray02};
 
   align-items: center;
 `;
@@ -61,7 +61,7 @@ const Header = styled.header`
 
   background: #fff;
 
-  font-size: 2rem;
+  font-family: ${({ theme }) => theme.font.body1};
 
   z-index: 1;
 `;

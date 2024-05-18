@@ -23,7 +23,9 @@ const SolveQuiz = () => {
           width: 28rem;
           padding: 1.4rem 9.4rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
-        `}></Button>
+          border-color: #ffc4e0;
+        `}
+        isActivated={false}></Button>
     </SolveQuizWrapper>
   );
 };
@@ -32,7 +34,6 @@ export default SolveQuiz;
 
 const SolveQuizWrapper = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.color.gray02};
 
   align-items: center;
 `;
@@ -51,7 +52,7 @@ const Header = styled.header`
 
   background: #fff;
 
-  font-size: 2rem;
+  font-family: ${({ theme }) => theme.font.body1};
 
   z-index: 1;
 `;
