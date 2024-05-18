@@ -1,5 +1,6 @@
-import { Button } from '@components';
+import { Button, Input } from '@components';
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 interface PasswordInputProps {
   onNext: VoidFunction;
@@ -7,12 +8,15 @@ interface PasswordInputProps {
 
 const PasswordInput = (props: PasswordInputProps) => {
   const { onNext } = props;
+  const [password, setPassword] = useState('');
   return (
     <>
       <TitleWrapper>
         <Title>비밀번호 입력해주세요.</Title>
       </TitleWrapper>
-      <Input />
+      <InputWrapper>
+        <Input value={password} />
+      </InputWrapper>
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} />
       </ButtonWrapper>
@@ -34,9 +38,14 @@ const TitleWrapper = styled.section`
   gap: 0.4rem;
 `;
 
-const Input = styled.input`
-  width: 34.3rem;
+const InputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-top: 6.7rem;
+  margin-left: 1.6rem;
+  width: 28rem;
 `;
 
 const ButtonWrapper = styled.div`
@@ -44,8 +53,6 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: pink;
-  padding: 1.4rem 0 1.5rem 0;
   width: 28rem;
-  margin-top: 3.2rem;
+  margin: 3.2rem;
 `;

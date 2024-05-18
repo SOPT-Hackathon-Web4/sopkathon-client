@@ -1,5 +1,6 @@
-import { Button } from '@components';
+import { Button, Input } from '@components';
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 interface InstaInputProps {
   onNext: VoidFunction;
@@ -7,6 +8,8 @@ interface InstaInputProps {
 
 const InstaInput = (props: InstaInputProps) => {
   const { onNext } = props;
+  const [instaValue, setInstaValue] = useState('');
+
   return (
     <>
       <TitleWrapper>
@@ -14,7 +17,7 @@ const InstaInput = (props: InstaInputProps) => {
         <Title>입력해주세요!</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input />
+        <Input value={instaValue} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} />
@@ -32,13 +35,9 @@ const InputWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 3.2rem;
-  width: 28rem;
-`;
-
-const Input = styled.input`
-  width: 34.3rem;
+  margin-left: 1.6rem;
   margin-top: 4.1rem;
+  width: 28rem;
 `;
 
 const Title = styled.h1`
@@ -58,7 +57,6 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1.4rem 0 1.5rem 0;
   width: 28rem;
   margin: 3.2rem;
 `;
