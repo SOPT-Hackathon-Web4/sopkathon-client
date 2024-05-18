@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
+import ZeroKmList from 'src/components/list/ZeroKmList';
 
 const MyPage = () => {
   //   const [btnActive, setBtnActive] = useState(0);
@@ -15,7 +16,8 @@ const MyPage = () => {
   return (
     <MyPageWrapper>
       <Header>마이페이지</Header>
-      <DropDownContainer>나와 거리가 0인 사람</DropDownContainer>
+      {/* <DropDownContainer>나와 거리가 0인 사람</DropDownContainer> */}
+      <ZeroKmList />
       <QuizBoxesContainer>
         {QUIZ_DATA?.map((item, idx) => (
           <QuizBox
@@ -45,6 +47,7 @@ const MyPageWrapper = styled.div`
   width: 100%;
 
   align-items: center;
+  background: ${({ theme }) => theme.color.sub2};
 `;
 
 const Header = styled.header`
@@ -65,16 +68,16 @@ const Header = styled.header`
   box-shadow: 0 0.4rem 2.5rem 0 rgba(0, 0, 0, 0.05);
 `;
 
-const DropDownContainer = styled.button`
-  display: flex;
-  align-items: center;
+// const DropDownContainer = styled.button`
+//   display: flex;
+//   align-items: center;
 
-  padding: 1.4rem 9.4rem;
-  margin: 7rem 4.8rem 1.6rem 4.8rem;
+//   padding: 1.4rem 9.4rem;
+//   margin: 7rem 4.8rem 1.6rem 4.8rem;
 
-  border: 0.2rem solid;
-  border-radius: 1rem;
-`;
+//   border: 0.2rem solid;
+//   border-radius: 1rem;
+// `;
 
 const QuizBoxesContainer = styled.section`
   display: flex;
