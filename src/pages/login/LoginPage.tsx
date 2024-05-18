@@ -5,6 +5,7 @@ import NameInput from './components/NameInput';
 import { useState } from 'react';
 import axios from 'axios';
 import ExistingPasswordInput from './components/ExistingPasswordInput';
+import styled from '@emotion/styled';
 
 const LOGIN_FORM_STEP = ['ID', 'PASSWORD', 'EXISTING_PASSWORD', 'NAME'] as const;
 
@@ -65,32 +66,39 @@ const LoginPage = () => {
   };
 
   return (
-    <Funnel>
-      <Funnel.Step name="ID">
-        <InstaInput
-          onNext={() => {
-            handleDuplicatedInstaId();
-            // setStep(() => 'PASSWORD');
-          }}
-          instaValue={instaValue}
-          onChange={handleInputChange}
-        />
-      </Funnel.Step>
-      <Funnel.Step name="PASSWORD">
-        <PasswordInput onNext={() => setStep(() => 'NAME')} password={password} onChange={handlePasswordChange} />
-      </Funnel.Step>
-      <Funnel.Step name="EXISTING_PASSWORD">
-        <ExistingPasswordInput
-          onNext={() => setStep(() => 'NAME')}
-          existingPassword={existingPassword}
-          onChange={handleExistingPasswordChange}
-        />
-      </Funnel.Step>
-      <Funnel.Step name="NAME">
-        <NameInput onNext={handleSubmit} name={name} onChange={handleNameChange} />
-      </Funnel.Step>
-    </Funnel>
+    <LoginPageWrapper>
+      <Funnel>
+        <Funnel.Step name="ID">
+          <InstaInput
+            onNext={() => {
+              handleDuplicatedInstaId();
+              // setStep(() => 'PASSWORD');
+            }}
+            instaValue={instaValue}
+            onChange={handleInputChange}
+          />
+        </Funnel.Step>
+        <Funnel.Step name="PASSWORD">
+          <PasswordInput onNext={() => setStep(() => 'NAME')} password={password} onChange={handlePasswordChange} />
+        </Funnel.Step>
+        <Funnel.Step name="EXISTING_PASSWORD">
+          <ExistingPasswordInput
+            onNext={() => setStep(() => 'NAME')}
+            existingPassword={existingPassword}
+            onChange={handleExistingPasswordChange}
+          />
+        </Funnel.Step>
+        <Funnel.Step name="NAME">
+          <NameInput onNext={handleSubmit} name={name} onChange={handleNameChange} />
+        </Funnel.Step>
+      </Funnel>
+    </LoginPageWrapper>
   );
 };
 
 export default LoginPage;
+
+const LoginPageWrapper = styled.section`
+  background-color: ${({ theme }) => theme.color.sub2};
+  /* background-color: #fbfbf4; */
+`;

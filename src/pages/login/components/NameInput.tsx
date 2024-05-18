@@ -10,6 +10,7 @@ interface NameInputProps {
 const NameInput = (props: NameInputProps) => {
   const { onNext, name, onChange } = props;
 
+  const isActivated = name.length > 0;
   return (
     <>
       <TitleWrapper>
@@ -19,7 +20,7 @@ const NameInput = (props: NameInputProps) => {
         <Input value={name} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="회원가입하기" onClick={onNext} />
+        <Button label="회원가입하기" onClick={onNext} isActivated={isActivated} />
       </ButtonWrapper>
     </>
   );
@@ -39,6 +40,7 @@ const InputWrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 2.4rem;
+  ${({ theme }) => theme.font.head1};
 `;
 
 const TitleWrapper = styled.section`

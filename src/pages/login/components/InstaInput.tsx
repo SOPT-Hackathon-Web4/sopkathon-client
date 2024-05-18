@@ -1,5 +1,4 @@
 import { Button, Input } from '@components';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
@@ -34,16 +33,18 @@ const InstaInput = (props: InstaInputProps) => {
 
   return (
     <>
-      <TitleWrapper>
-        <Title>인스타그램 아이디를</Title>
-        <Title>입력해주세요!</Title>
-      </TitleWrapper>
-      <InputWrapper>
-        <Input value={instaValue} onChange={onChange} />
-      </InputWrapper>
-      <ButtonWrapper>
-        <Button label="다음" onClick={onNext} isActivated={isActivated} customStyle={css``} />
-      </ButtonWrapper>
+      <LoginPageWrapper>
+        <TitleWrapper>
+          <Title>인스타그램 아이디를</Title>
+          <Title>입력해주세요!</Title>
+        </TitleWrapper>
+        <InputWrapper>
+          <Input value={instaValue} onChange={onChange} />
+        </InputWrapper>
+        <ButtonWrapper>
+          <Button label="다음" onClick={onNext} isActivated={isActivated} />
+        </ButtonWrapper>
+      </LoginPageWrapper>
     </>
   );
 };
@@ -58,10 +59,12 @@ const InputWrapper = styled.div`
   margin-left: 1.6rem;
   margin-top: 4.1rem;
   width: 28rem;
+  /* background: ${({ theme }) => theme.color.sub2}; */
 `;
 
 const Title = styled.h1`
   font-size: 2.4rem;
+  ${({ theme }) => theme.font.head1};
 `;
 
 const TitleWrapper = styled.section`
@@ -79,4 +82,8 @@ const ButtonWrapper = styled.div`
   width: 100%;
   width: 28rem;
   margin: 3.2rem;
+`;
+
+const LoginPageWrapper = styled.section`
+  background: ${({ theme }) => theme.color.sub2};
 `;
