@@ -7,7 +7,7 @@ const Dev = () => {
   return (
     <DevWrapper>
       Dev
-      <div style={{ width: '20rem' }}>
+      <div style={{ width: '30rem' }}>
         <IcBrunchLogo />
       </div>
       <div style={{ width: '20rem' }}>
