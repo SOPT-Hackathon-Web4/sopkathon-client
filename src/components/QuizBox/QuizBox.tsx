@@ -3,7 +3,7 @@ import { Generators } from '@styles/generator';
 import { SerializedStyles } from '@typings/commonType';
 
 export interface QuizBoxProps {
-  idx?: number;
+  quizNum?: number;
   title?: string;
   labelLeft?: string;
   labelRight?: string;
@@ -11,11 +11,11 @@ export interface QuizBoxProps {
   customStyle?: SerializedStyles;
 }
 
-const QuizBox = ({ idx, title, labelLeft, labelRight, onClick = () => {} }: QuizBoxProps) => {
+const QuizBox = ({ quizNum, title, labelLeft, labelRight, onClick = () => {} }: QuizBoxProps) => {
   return (
     <QuizBoxContainer>
       <TextContainer>
-        Q{idx}. {title}
+        Q{quizNum}. {title}
       </TextContainer>
       <BtnContainer>
         <QuizBtn className={`button`} onClick={onClick}>
