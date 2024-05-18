@@ -17,7 +17,7 @@ const CreateQuiz = () => {
         ))}
       </QuizBoxesContainer>
       <Button
-        label="퀴즈 생성하기"
+        label="퀴즈 만들기"
         onClick={() => alert('Click!!')}
         customStyle={css`
           width: 28rem;

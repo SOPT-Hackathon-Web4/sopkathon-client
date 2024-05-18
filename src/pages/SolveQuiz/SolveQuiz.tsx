@@ -17,15 +17,15 @@ const SolveQuiz = () => {
         ))}
       </QuizBoxesContainer>
       <Button
-        label="퀴즈 제출하기"
+        label="퀴즈 다 풀었다!"
         onClick={() => alert('Click!!')}
         customStyle={css`
           width: 28rem;
-          padding: 1.4rem 9.4rem;
+          margin-top: 2.4rem;
+          padding: 1.4rem 8rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
-          border-color: #ffc4e0;
         `}
-        isActivated={false}></Button>
+        isActivated={true}></Button>
     </SolveQuizWrapper>
   );
 };
@@ -39,22 +39,21 @@ const SolveQuizWrapper = styled.div`
 `;
 
 const Header = styled.header`
-  display: inline-flex;
+  display: flex;
   position: fixed;
   align-items: center;
 
   margin-bottom: 1.6rem;
   padding: 1.2rem 1.6rem 1.2rem;
-  width: 100%;
+  width: 37.5rem;
   top: 0;
-
-  border: 0.1rem solid black;
 
   background: #fff;
 
   font-family: ${({ theme }) => theme.font.body1};
 
   z-index: 1;
+  box-shadow: 0 0.4rem 2.5rem 0 rgba(0, 0, 0, 0.05);
 `;
 
 const QuizBoxesContainer = styled.section`
