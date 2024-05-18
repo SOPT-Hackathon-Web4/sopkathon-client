@@ -5,12 +5,19 @@ import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
 
 const MyPage = () => {
-  //   const [btnActive, setBtnActive] = useState(0);
-  //   const [toggleOpen, setToggleOpen] = useState(false);
+  const isCheck = [true, true, true, true, true, true, true, true];
 
-  //   const toggleBtnActive = () => {
-  //     setToggleOpen(!toggleOpen);
-  //   };
+  // 서버에서 이 부분을 받아야 함
+  const arr = [
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+    { answer: true },
+  ];
 
   return (
     <MyPageWrapper>
@@ -22,7 +29,9 @@ const MyPage = () => {
             quizNum={idx + 1}
             title={item.title}
             labelLeft={item.labelLeft}
-            labelRight={item.labelRight}></QuizBox>
+            labelRight={item.labelRight}
+            isCheck={isCheck[idx]}
+            active={arr[idx].answer}></QuizBox>
         ))}
       </QuizBoxesContainer>
       <Button
