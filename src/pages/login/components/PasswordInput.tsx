@@ -17,7 +17,7 @@ const PasswordInput = (props: PasswordInputProps) => {
         <Title>비밀번호 입력해주세요.</Title>
       </TitleWrapper>
       <InputWrapper>
-        <Input value={password} onChange={onChange} />
+        <Input type="password" value={password} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
         <Button label="다음" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />

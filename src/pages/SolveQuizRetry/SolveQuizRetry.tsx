@@ -5,7 +5,7 @@ import { QUIZ_DATA } from 'src/constants/quizData';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SolveQuiz = () => {
+const SolveQuizRetry = () => {
   const navigate = useNavigate();
   const [isCheck, setIsCheck] = useState([false, false, false, false, false, false, false, false]);
 
@@ -62,7 +62,7 @@ const SolveQuiz = () => {
       </QuizBoxesContainer>
       <Button
         label="퀴즈 다 풀었다!"
-        onClick={() => navigate('/retry-quiz')}
+        onClick={() => navigate('/result-quiz')}
         customStyle={css`
           width: 28rem;
           margin-top: 2.4rem;
@@ -74,7 +74,7 @@ const SolveQuiz = () => {
   );
 };
 
-export default SolveQuiz;
+export default SolveQuizRetry;
 
 const SolveQuizWrapper = styled.div`
   width: 100%;

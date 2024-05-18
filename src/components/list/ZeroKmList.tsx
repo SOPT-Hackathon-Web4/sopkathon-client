@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 
-const ZERO_KM_DATA = [
-  { instaId: '@exceptanyone' },
-  { instaId: '@ry_u.ts' },
-  { instaId: '@d_awnw' },
-  { instaId: '@haeun_rho' },
-  { instaId: '@seoyeoan_ov' },
-];
+// const ZERO_KM_DATA = [
+// {},
+// { instaId: '@exceptanyone' },
+// { instaId: '@ry_u.ts' },
+// { instaId: '@d_awnw' },
+// { instaId: '@haeun_rho' },
+// { instaId: '@seoyeoan_ov' },
+// ];
 
 const ZeroKmList = () => {
   return (
@@ -14,12 +15,12 @@ const ZeroKmList = () => {
       <Section>
         <Text>나와 거리가 0km인 사람</Text>
       </Section>
-      {ZERO_KM_DATA.map((data, index) => (
+      {/* {ZERO_KM_DATA.map((data, index) => (
         <Section key={index}>
           <Text>투제로</Text>
           <Text>{data.instaId}</Text>
         </Section>
-      ))}
+      ))} */}
     </ZeroKimListWrapper>
   );
 };

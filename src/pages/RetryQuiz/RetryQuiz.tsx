@@ -2,8 +2,11 @@ import styled from '@emotion/styled';
 import { Generators } from '@styles/generator';
 import { Button } from '@components';
 import { IcRetryImg } from '@assets/svg';
+import { useNavigate } from 'react-router-dom';
 
 const RetryQuiz = () => {
+  const navigate = useNavigate();
+
   return (
     <RetryQuizWrapper>
       <H1>김가연 님과 나의 거리</H1>
@@ -16,7 +19,13 @@ const RetryQuiz = () => {
       <ResultText>더 가까이 다가가볼까요?</ResultText>
       <ResultButtons>
         <ButtonWrapper>
-          <Button label="재도전!" isActivated={false} />
+          <Button
+            label="재도전!"
+            isActivated={false}
+            onClick={() => {
+              navigate('/solve-quiz/retry');
+            }}
+          />
         </ButtonWrapper>
       </ResultButtons>
       <ResultFooter>
