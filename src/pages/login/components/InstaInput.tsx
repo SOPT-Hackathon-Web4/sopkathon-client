@@ -39,7 +39,7 @@ const InstaInput = (props: InstaInputProps) => {
         <Input value={instaValue} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="다음" onClick={onNext} />
+        <Button label="다음" onClick={onNext} isActivated={true} />
       </ButtonWrapper>
     </>
   );
