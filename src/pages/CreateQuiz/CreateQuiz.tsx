@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { QuizBox } from '@components';
+import { css } from '@emotion/react';
+import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
 
 const CreateQuiz = () => {
@@ -15,6 +16,15 @@ const CreateQuiz = () => {
             labelRight={item.labelRight}></QuizBox>
         ))}
       </QuizBoxesContainer>
+      <Button
+        label="퀴즈 생성하기"
+        onClick={() => alert('Click!!')}
+        customStyle={css`
+          width: 28rem;
+          margin-top: 2.4rem;
+          padding: 1.4rem 9.4rem;
+          margin: 2.4rem 4.8rem 10rem 4.8rem;
+        `}></Button>
     </CreateQuizWrapper>
   );
 };
@@ -24,6 +34,8 @@ export default CreateQuiz;
 const CreateQuizWrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.color.gray02};
+
+  align-items: center;
 `;
 
 const Header = styled.header`
