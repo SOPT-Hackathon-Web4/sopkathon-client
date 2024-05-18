@@ -42,13 +42,15 @@ const QuizBoxContainer = styled.section`
 const TextContainer = styled.section`
   display: flex;
 
-  padding: 2rem;
+  margin: 2rem;
+
+  font-size: 1.6rem;
 `;
 
 const BtnContainer = styled.section`
   display: flex;
 
-  padding: 0 2rem;
+  margin: 2rem;
   gap: 2.4rem;
 `;
 
@@ -61,4 +63,6 @@ const QuizBtn = styled.button`
 
   border: 0.1rem solid;
   border-radius: 1rem;
+
+  font-size: 2rem;
 `;

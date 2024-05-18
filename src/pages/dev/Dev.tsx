@@ -6,7 +6,7 @@ const Dev = () => {
     <DevWrapper>
       <div style={{ width: '20rem' }}>{/* 버튼 컴포넌트 */}</div>
       <div style={{ width: '20rem' }}>{/* 인풋 컴포넌트 */}</div>
-      <div style={{ width: '20rem' }}>
+      <div>
         {/* 퀴즈박스 컴포넌트 */}
         <QuizBox></QuizBox>
       </div>
@@ -18,5 +18,7 @@ export default Dev;
 
 const DevWrapper = styled.div`
   background-color: ${({ theme }) => theme.color.gray02};
+
+  padding: 0 1.6rem;
   gap: 2rem;
 `;
