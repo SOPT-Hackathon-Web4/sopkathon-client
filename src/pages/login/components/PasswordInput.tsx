@@ -20,7 +20,7 @@ const PasswordInput = (props: PasswordInputProps) => {
         <Input value={password} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="다음" onClick={onNext} isActivated={isActivated} />
+        <Button label="다음" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />
       </ButtonWrapper>
     </>
   );

@@ -20,7 +20,7 @@ const NameInput = (props: NameInputProps) => {
         <Input value={name} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="회원가입하기" onClick={onNext} isActivated={isActivated} />
+        <Button label="회원가입하기" onClick={onNext} isActivated={isActivated} disabled={!isActivated} />
       </ButtonWrapper>
     </>
   );
