@@ -35,6 +35,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   height: 5.2rem;
   ${Generators.flexGenerator()};
   gap: 0.4rem;
+  border: none;
 
   ${(props) => props.customStyle}
 
