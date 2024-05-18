@@ -21,7 +21,6 @@ const SolveQuiz = () => {
         onClick={() => alert('Click!!')}
         customStyle={css`
           width: 28rem;
-          margin-top: 2.4rem;
           padding: 1.4rem 9.4rem;
           margin: 2.4rem 4.8rem 10rem 4.8rem;
         `}></Button>
@@ -46,6 +45,7 @@ const Header = styled.header`
   margin-bottom: 1.6rem;
   padding: 1.2rem 1.6rem 1.2rem;
   width: 100%;
+  top: 0;
 
   border: 0.1rem solid black;
 
@@ -60,7 +60,8 @@ const QuizBoxesContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  padding: 0 1.6rem;
+  padding: 1.6rem;
+  margin-top: 5rem;
 
   gap: 1.6rem;
 `;

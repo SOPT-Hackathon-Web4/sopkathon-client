@@ -39,28 +39,29 @@ const CreateQuizWrapper = styled.div`
 `;
 
 const Header = styled.header`
-  display: inline-flex;
+  display: flex;
   position: fixed;
   align-items: center;
 
   margin-bottom: 1.6rem;
   padding: 1.2rem 1.6rem 1.2rem;
-  width: 100%;
-
-  border: 0.1rem solid black;
+  width: 37.5rem;
+  top: 0;
 
   background: #fff;
 
   font-size: 2rem;
 
   z-index: 1;
+  box-shadow: 0 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.08);
 `;
 
 const QuizBoxesContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  padding: 0 1.6rem;
+  padding: 1.6rem;
+  margin-top: 5rem;
 
   gap: 1.6rem;
 `;

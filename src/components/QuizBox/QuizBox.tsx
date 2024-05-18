@@ -51,7 +51,7 @@ const TextContainer = styled.section`
 const BtnContainer = styled.section`
   display: flex;
 
-  margin: 2rem;
+  margin: 1.95rem;
   gap: 2.4rem;
 `;
 
