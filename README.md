@@ -190,7 +190,10 @@
 
 <h2> 새싹 웨비 Before and After</h2>
 <h3>Before</h3>
-<img src="" alt="웨비 팀원들 사진 (before)"/>
+
+![KakaoTalk_20240518_223247808](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/409ce92f-ca27-4dbe-a682-148cd0391068)
+
+웨비 팀원들 사진 (before)
  
 <h3>After</h3>
 <img src="" alt="웨비 팀원들 사진 (after)"/>
