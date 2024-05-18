@@ -14,8 +14,7 @@
 
 <h3> 1️⃣ 내 퀴즈 만들기 </h3>
 
-![image](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/ff537087-5db4-497c-9d1a-157c2f00dfdb)
-![퀴즈 공유](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/e9671029-f879-4f1b-a27b-63d9ee0a2be6)
+![image](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/ff537087-5db4-497c-9d1a-157c2f00dfdb)![퀴즈 공유](https://github.com/SOPT-Hackathon-Web4/sopkathon-client/assets/66528589/e9671029-f879-4f1b-a27b-63d9ee0a2be6)
 
 
 
@@ -186,6 +185,8 @@
  ┃ ┃ ┗ 📜Funnel.tsx
  ┃ ┣ 📂Input
  ┃ ┃ ┗ 📜Input.tsx
+ ┃ ┣ 📂list
+ ┃ ┃ ┗ 📜ZeroKmList.tsx
  ┃ ┣ 📂QuizBox
  ┃ ┃ ┗ 📜QuizBox.tsx
  ┃ ┗ 📜index.ts
@@ -220,6 +221,8 @@
  ┃ ┃ ┗ 📜RetryQuiz.tsx
  ┃ ┣ 📂SolveQuiz
  ┃ ┃ ┗ 📜SolveQuiz.tsx
+ ┃ ┣ 📂SolveQuizRetry
+ ┃ ┃ ┗ 📜SolveQuizRetry.tsx
  ┃ ┗ 📜index.ts
  ┣ 📂styles
  ┃ ┣ 📜emotion.d.ts
