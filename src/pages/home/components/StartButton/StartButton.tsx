@@ -2,14 +2,15 @@ import styled from '@emotion/styled';
 import { Generators } from '@styles/generator';
 
 export interface StartButtonProps {
+  color?: string;
   descriptionLabel: string;
   buttonLabel: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const StartButton = ({ descriptionLabel, buttonLabel, onClick = () => {} }: StartButtonProps) => {
+const StartButton = ({ color = 'primary1', descriptionLabel, buttonLabel, onClick = () => {} }: StartButtonProps) => {
   return (
-    <StartButtonContainer className={`start-button`} onClick={onClick}>
+    <StartButtonContainer color={color} className={`start-button`} onClick={onClick}>
       <DescriptionSpan>{descriptionLabel}</DescriptionSpan>
       <ButtonSpan>{buttonLabel}</ButtonSpan>
     </StartButtonContainer>
@@ -23,7 +24,10 @@ const StartButtonContainer = styled.button`
   height: 8rem;
   ${Generators.flexGenerator('column', 'center', 'center')};
   gap: 1rem;
-  padding: 1.2rem 0;
+  padding: 1.6rem 0;
+  border-radius: 2rem;
+  background-color: ${({ theme }) => theme.color.white};
+  ${({ color, theme }) => `border-color: ${color === 'primary1' ? theme.color.primary1 : theme.color.primary2}`};
 `;
 
 const DescriptionSpan = styled.span`
