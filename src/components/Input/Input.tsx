@@ -29,8 +29,8 @@ const Input = ({
 }: InputProps) => {
   return (
     <InputContainer className={`input`} customStyle={customStyle}>
-      <input type={type} placeholder={placeholder} value={value} onChange={onChange} {...props} />
-      {isError && <span>{errorMessage}</span>}
+      <CommonInput type={type} placeholder={placeholder} value={value} onChange={onChange} {...props} />
+      {isError && <ErrorSpan>{errorMessage}</ErrorSpan>}
     </InputContainer>
   );
 };
@@ -39,8 +39,17 @@ export default Input;
 
 const InputContainer = styled.div<InputContainerProps>`
   width: 100%;
-  ${Generators.flexGenerator()};
-  gap: 0.4rem;
+  ${Generators.flexGenerator('column', 'center', 'flex-start')};
 
   ${(props) => props.customStyle}
+`;
+
+const CommonInput = styled.input`
+  width: 100%;
+  height: 3rem;
+`;
+
+const ErrorSpan = styled.span`
+  color: red;
+  font-size: 1.2rem;
 `;
