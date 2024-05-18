@@ -7,5 +7,6 @@ const Home = () => {
 export default Home;
 
 const HomeWrapper = styled.div`
+  width: 100%;
   background-color: ${({ theme }) => theme.color.gray02};
 `;

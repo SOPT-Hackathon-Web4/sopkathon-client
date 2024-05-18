@@ -28,9 +28,8 @@ const GlobalStyle = css`
   }
 
   #root {
-    min-width: 128rem;
+    width: 37.5rem;
     min-height: 100vh;
-    width: 100%;
   }
 `;
 
