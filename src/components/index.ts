@@ -1,3 +1,4 @@
 import Button from './Button';
+import QuizBox from './QuizBox/QuizBox';
 
-export { Button };
+export { Button, QuizBox };
