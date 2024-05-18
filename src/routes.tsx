@@ -1,10 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Dev, CreateQuiz, Home } from '@pages';
+import { Dev, CreateQuiz, Home, LoginPage } from '@pages';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   },
   {
     path: '/dev',

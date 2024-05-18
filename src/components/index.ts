@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from './Button/Button';
 import QuizBox from './QuizBox/QuizBox';
 import Input from './Input/Input';
 
