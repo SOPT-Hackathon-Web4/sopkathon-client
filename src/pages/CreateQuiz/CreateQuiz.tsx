@@ -3,8 +3,11 @@ import { css } from '@emotion/react';
 import { QuizBox, Button } from '@components';
 import { QUIZ_DATA } from 'src/constants/quizData';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateQuiz = () => {
+  const navigate = useNavigate();
+
   const [isCheck, setIsCheck] = useState([false, false, false, false, false, false, false, false]);
 
   const [arr, setArr] = useState([
@@ -61,7 +64,7 @@ const CreateQuiz = () => {
       </QuizBoxesContainer>
       <Button
         label="퀴즈 만들기"
-        onClick={() => alert('Click!!')}
+        onClick={() => navigate('/mypage')}
         customStyle={css`
           width: 28rem;
           margin-top: 2.4rem;
