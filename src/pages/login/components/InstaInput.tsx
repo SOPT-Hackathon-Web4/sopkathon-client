@@ -1,4 +1,5 @@
 import { Button, Input } from '@components';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
@@ -11,6 +12,8 @@ interface InstaInputProps {
 
 const InstaInput = (props: InstaInputProps) => {
   const { onNext, instaValue, onChange } = props;
+
+  const isActivated = instaValue.length > 0;
   // const navigate = useNavigate();
 
   // const checkInstagramId = async () => {
@@ -39,7 +42,7 @@ const InstaInput = (props: InstaInputProps) => {
         <Input value={instaValue} onChange={onChange} />
       </InputWrapper>
       <ButtonWrapper>
-        <Button label="다음" onClick={onNext} isActivated={true} />
+        <Button label="다음" onClick={onNext} isActivated={isActivated} customStyle={css``} />
       </ButtonWrapper>
     </>
   );
