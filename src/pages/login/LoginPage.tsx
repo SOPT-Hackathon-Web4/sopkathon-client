@@ -6,8 +6,8 @@ import { useState } from 'react';
 // import axios from 'axios';
 import ExistingPasswordInput from './components/ExistingPasswordInput';
 import styled from '@emotion/styled';
-import { getMember, getPasswordCheck } from '@apis/member';
-import { useNavigate } from 'react-router-dom';
+// import { getMember, getPasswordCheck } from '@apis/member';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const LOGIN_FORM_STEP = ['ID', 'PASSWORD', 'EXISTING_PASSWORD', 'NAME'] as const;
 
@@ -19,6 +19,8 @@ const LoginPage = () => {
   const [existingPassword, setExistingPassword] = useState('');
 
   const [name, setName] = useState('');
+
+  const { next } = useParams();
 
   const navigate = useNavigate();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,14 +57,20 @@ const LoginPage = () => {
     // }
   };
 
-  const handleDuplicatedInstaId = (id: string) => {
-    try {
-      getMember(id);
-      setStep(() => 'PASSWORD');
-    } catch (error) {
-      console.error('Error checking Instagram ID:', error);
+  const handleDuplicatedInstaId = () => {
+    if (next === 'mypage') {
       setStep(() => 'EXISTING_PASSWORD');
+      return;
+    } else {
+      setStep(() => 'PASSWORD');
     }
+    // try {
+    //   getMember(id);
+    //   setStep(() => 'PASSWORD');
+    // } catch (error) {
+    //   console.error('Error checking Instagram ID:', error);
+    //   setStep(() => 'EXISTING_PASSWORD');
+    // }
   };
   // const handleDuplicatedInstaId = async () => {
   //   try {
@@ -85,12 +93,12 @@ const LoginPage = () => {
   //   }
   // };
 
-  const handleDuplicate = (id: string, password: string) => {
+  const handleDuplicate = () => {
     try {
-      getPasswordCheck(id, password);
+      // getPasswordCheck(id, password);
       // navigate('/create-quiz');
 
-      // navigate('/mypage')
+      navigate('/mypage');
     } catch (err) {
       console.log(err);
     }
@@ -102,7 +110,7 @@ const LoginPage = () => {
         <Funnel.Step name="ID">
           <InstaInput
             onNext={() => {
-              handleDuplicatedInstaId(instaValue);
+              handleDuplicatedInstaId();
               // setStep(() => 'PASSWORD');
             }}
             instaValue={instaValue}
@@ -115,7 +123,7 @@ const LoginPage = () => {
         <Funnel.Step name="EXISTING_PASSWORD">
           <ExistingPasswordInput
             // onNext={() => setStep(() => 'NAME')}
-            onNext={() => handleDuplicate(instaValue, password)}
+            onNext={() => handleDuplicate()}
             existingPassword={existingPassword}
             onChange={handleExistingPasswordChange}
           />

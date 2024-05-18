@@ -1,17 +1,24 @@
 import styled from '@emotion/styled';
 import StartButton from './components/StartButton/StartButton';
 import { Generators } from '@styles/generator';
-import { getMember } from '@apis/member';
 import { IcMainIcon } from '@assets/svg';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <HomeWrapper>
       <WelcomeH1>투제로에 온 것을 환영해요!</WelcomeH1>
       <IcMainIcon width={'20rem'} style={{ marginTop: '6.7rem', marginBottom: '5.2rem' }} />
       <MainButtons>
-        <StartButton descriptionLabel="처음 왔나요?" buttonLabel="투제로 시작하기" onClick={() => getMember('1')} />
-        <StartButton color="primary2" descriptionLabel="이미 계정이 있나요?" buttonLabel="투제로 계속하기" />
+        <StartButton descriptionLabel="처음 왔나요?" buttonLabel="투제로 시작하기" onClick={() => navigate('/login')} />
+        <StartButton
+          color="primary2"
+          descriptionLabel="이미 계정이 있나요?"
+          buttonLabel="투제로 계속하기"
+          onClick={() => navigate('/login/mypage')}
+        />
       </MainButtons>
     </HomeWrapper>
   );
