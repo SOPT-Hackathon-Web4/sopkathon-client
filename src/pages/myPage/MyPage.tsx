@@ -9,16 +9,16 @@ import ZeroKmList from 'src/components/list/ZeroKmList';
 const MyPage = () => {
   const isCheck = [true, true, true, true, true, true, true, true];
 
-  const arr = [
-    { answer: true },
-    { answer: true },
-    { answer: true },
-    { answer: true },
-    { answer: true },
-    { answer: true },
-    { answer: true },
-    { answer: true },
-  ];
+    const arr = [
+        { answer: true },
+        { answer: false },
+        { answer: true },
+        { answer: true },
+        { answer: false },
+        { answer: true },
+        { answer: false },
+        { answer: false },
+    ];
 
   const navigate = useNavigate();
 
@@ -39,16 +39,27 @@ const MyPage = () => {
             active={arr[idx].answer}></QuizBox>
         ))}
       </QuizBoxesContainer>
+        <div style={{
+            width: '100%',
+            marginTop: '2.4rem',
+            padding: '1.6rem',
+            display: 'flex',
+            gap: '1rem',
+        }}>
+
       <Button
         label="퀴즈 없애기"
         onClick={() => navigate('/')}
+        isActivated={false}></Button>
+        <Button
+        label="링크 복사하기"
+        onClick={() => navigate('/')}
         customStyle={css`
-          width: 28rem;
-          margin-top: 2.4rem;
-          padding: 1.4rem 9.4rem;
-          margin: 2.4rem 4.8rem 10rem 4.8rem;
+            background-color: #FFC4E0;
         `}
         isActivated={false}></Button>
+        </div>
+
     </MyPageWrapper>
   );
 };
